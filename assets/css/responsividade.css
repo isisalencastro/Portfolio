@@ -1,0 +1,274 @@
+/* ---------- RESPONSIVIDADE HEADER -------------*/
+/* Botão hamburguer */
+.menu-btn {
+    display: none; /* escondido no desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.menu-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--text-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Menu mobile */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* fora da tela */
+    height: 100vh;
+    width: 260px;
+    background-color: var(--background-color);
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1050;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mobile-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Quando menu estiver ativo */
+.mobile-menu.active {
+    right: 0;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    header nav ul {
+        display: none; /* esconde menu desktop */
+    }
+
+    .menu-btn {
+        display: flex; /* mostra botão hamburguer */
+    }
+}
+
+/* ----------------- RESPONSIVIDADE HOME ----------------- */
+@media (max-width: 1024px) {
+    #apresentacao {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    #texto-apresentacao {
+        font-size: 20px;
+        max-width: 500px;
+    }
+
+    #texto-apresentacao h1 {
+        font-size: 24px;
+    }
+
+    #texto-apresentacao #ola-principal {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 600px) {
+    #apresentacao {
+        margin-top: 60px;
+    }
+
+    #foto-notion {
+        max-width: 320px;
+    }
+
+    #texto-apresentacao {
+        font-size: 18px;
+        max-width: 380px;
+
+    }
+
+    #texto-apresentacao #ola-principal {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    #texto-apresentacao button {
+        width: 100%;
+    }
+}
+
+/* ----------------- RESPONSIVIDADE STACKS ----------------- */
+@media (max-width: 768px) {
+    #stacks {
+        padding: 40px 16px;
+    }
+
+    #stacks h2 {
+        font-size: 22px;
+        margin-bottom: 28px;
+    }
+
+    #icones-stacks {
+        gap: 20px;
+    }
+
+    #stacks img {
+        max-width: 48px;
+    }
+
+    #icone-n8n {
+        max-width: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    #stacks h2 {
+        font-size: 20px;
+        letter-spacing: 1.5px;
+    }
+
+    #stacks img {
+        max-width: 42px;
+    }
+}
+
+/*---------------------- RESPONSIVIDADE SOBRE MIM ---------------------------*/
+@media (max-width: 992px) {
+    #sobre-mim {
+        padding: 32px 28px;
+    }
+
+    #dados-sobre {
+        justify-content: center;
+        text-align: center;
+    }
+
+    #dados-sobre p {
+        font-size: 16px;
+    }
+
+    #foto-sobre img {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    #sobre h3 {
+        font-size: 28px;
+    }
+
+    #sobre-mim {
+        padding: 24px;
+        gap: 16px;
+    }
+
+    #texto-sobre {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    #redes-sociais img {
+        width: 28px;
+    }
+}
+
+/*---------------------- RESPONSIVIDADE SERVIÇOS ---------------------------*/
+@media (max-width: 900px) {
+    .servico {
+        flex: 0 0 calc(50% - 16px); /* 2 serviços visíveis */
+        scroll-snap-align: center;
+    }
+    .servico .btn-saiba-mais{
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .servico {
+        flex: 0 0 100%; /* 1 serviço visível */
+        scroll-snap-align: center;
+    }
+
+    .servico .btn-saiba-mais{
+        display: none;
+    }
+}
+
+/*---------------------- RESPONSIVIDADE PROJETOS ---------------------------*/
+@media (max-width: 992px) {
+    .projeto {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .projeto img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .infos-projeto {
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    #projetos h3 {
+        font-size: 28px;
+    }
+
+    .infos-projeto h4 {
+        font-size: 20px;
+    }
+
+    .infos-projeto p {
+        font-size: 16px;
+    }
+
+    .infos-projeto a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/*---------------------- RESPONSIVIDADE CONTATO ---------------------------*/
+@media (max-width: 992px) {
+    #info-contato {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    #info-contato {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
